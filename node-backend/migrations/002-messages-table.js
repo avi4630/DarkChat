@@ -14,7 +14,7 @@ module.exports = {
           type: Sequelize.TEXT,
           allowNull: false,
         },
-        receiver: {
+        receiver_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
@@ -22,7 +22,7 @@ module.exports = {
             key: "id",
           },
         },
-        sender: {
+        sender_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {

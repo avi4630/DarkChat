@@ -19,7 +19,6 @@ if (config.use_env_variable) {
     config
   );
 }
-
 fs.readdirSync(__dirname)
   .filter((file) => {
     return (
@@ -28,7 +27,6 @@ fs.readdirSync(__dirname)
   })
   .forEach((file) => {
     const model = sequelize["import"](path.join(__dirname, file));
-    console.log(model)
     db[model.name] = model;
   });
 

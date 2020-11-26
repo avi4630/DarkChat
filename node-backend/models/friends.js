@@ -8,11 +8,11 @@ module.exports = (sequelize, Sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      user: {
+      user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      friend: {
+      friend_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -25,10 +25,12 @@ module.exports = (sequelize, Sequelize) => {
   );
   Friends.associate = (models) => {
     Friends.belongsTo(models.users, {
-      foreignKey: "user",
+      foreignKey: "friend_id",
+      as:"user_friends",
     });
     Friends.belongsTo(models.users, {
-      foreignKey: "friend",
+      foreignKey: "user_id",
+      as: "self"
     });
   };
 

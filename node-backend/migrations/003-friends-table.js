@@ -10,7 +10,7 @@ module.exports = {
           primaryKey: true,
           allowNull: false,
         },
-        user: {
+        user_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
@@ -18,7 +18,7 @@ module.exports = {
             key: "id",
           },
         },
-        friend: {
+        friend_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {

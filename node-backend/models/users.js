@@ -35,10 +35,12 @@ module.exports = (sequelize, Sequelize) => {
       foreignKey: "sender",
     });
     Users.hasMany(models.friends, {
-      foreignKey: "user",
+      foreignKey: "friend_id",
+      as: "user_friends",
     });
     Users.hasMany(models.friends, {
-      foreignKey: "friend",
+      foreignKey: "user_id",
+      as: "self"
     });
   };
   return Users;

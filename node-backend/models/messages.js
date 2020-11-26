@@ -12,11 +12,11 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      sender: {
+      sender_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      receiver: {
+      receiver_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -32,11 +32,11 @@ module.exports = (sequelize, Sequelize) => {
     }
   );
   Messages.associate = (models) => {
-    Recognitions.belongsTo(models.users, {
-      foreignKey: "receiver",
+    Messages.belongsTo(models.users, {
+      foreignKey: "receiver_id",
     });
     Messages.belongsTo(models.users, {
-      foreignKey: "sender",
+      foreignKey: "sender_id",
     });
   };
 
